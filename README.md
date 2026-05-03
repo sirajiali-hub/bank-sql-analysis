@@ -41,12 +41,27 @@ would ask, using SQL queries on a relational database with 5 connected tables.
 
 - Students have highest default rate (15.4%) despite smallest loans
 - Services and blue-collar segments are overleveraged (loan-to-balance >1,300x)
-- Savings accounts show negative net flow — withdrawal exceeds deposits
+- Savings accounts show negative net flow withdrawal exceeds deposits
 - Estimated default losses at 60% LGD quantified for IFRS 9 provisioning
+## Power BI Dashboard
+
+Interactive credit risk dashboard built from the same database:
+
+**Page 1 — Overview**
+- Total loan book: KES 7.52B across 5,906 loans and 11,162 customers
+- Loan distribution by job category and loan status
+- Default rate by customer segment (students highest at 15.38%)
+
+**Page 2 — Trends & Details**
+- Transaction volume trend (declining year over year)
+- Detailed risk profile table by job segment
+
+View the dashboard [c:\Users\siraa\Desktop\bank-sql-analysis\bank_credit_dashboard.pdf](bank_credit_dashboard.pdf)
+
 
 ## Tech Stack
+Tools: Power BI Desktop, SQLite, Python
 
-Python, SQLite, pandas
 
 ## Author
 
