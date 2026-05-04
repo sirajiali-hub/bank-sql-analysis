@@ -47,12 +47,12 @@ would ask, using SQL queries on a relational database with 5 connected tables.
 
 Interactive credit risk dashboard built from the same database:
 
-**Page 1 — Overview**
+**Page 1 Overview**
 - Total loan book: KES 7.52B across 5,906 loans and 11,162 customers
 - Loan distribution by job category and loan status
 - Default rate by customer segment (students highest at 15.38%)
 
-**Page 2 — Trends & Details**
+**Page 2  Trends & Details**
 - Transaction volume trend (declining year over year)
 - Detailed risk profile table by job segment
 
