@@ -1,68 +1,35 @@
-# Bank Customer & Credit Risk Analysis SQL Project
+# Bank Customer and Credit Risk Analysis with SQL
 
-SQL-driven analysis of a mid-sized bank's customer base, loan portfolio, 
-transaction patterns, and marketing effectiveness.
+**In one line:** Using SQL to answer the questions a bank manager asks about customers, loan defaults and marketing.
 
-## What This Project Does
+## The questions
+1. Which customer groups default most on their loans?
+2. How healthy is the loan book, and how much money is at risk?
+3. Which customers respond best to marketing calls?
 
-Answers critical business questions a credit risk team and bank management 
-would ask, using SQL queries on a relational database with 5 connected tables.
+## What I did
+1. Loaded five linked tables into a SQL database: customers, accounts, loans, transactions and marketing campaigns.
+2. Joined the tables to link each customer to their account, loans and activity.
+3. Grouped customers by job, education and loan size, and worked out default rates for each group.
+4. Ranked customers by how much money they moved, and sized up the loan book by status.
 
-## Business Questions Answered
+## What I found
+* **Defaults:** 9.9% of loans (586 of 5,906) have defaulted, about 9.1% of the loan book by value. At a 60% loss rate, that means expected losses of about 411 million.
+* **Riskiest group:** students default most (15.4%), but there are only 52 student borrowers. Self employed borrowers default least (7.1%).
+* **Loan size:** bigger loans are not riskier. Default rates stay between 8% and 11% at every loan size.
+* **Savings accounts:** more money was withdrawn than deposited (about 12.5 million net outflow), worth watching.
+* **Marketing:** students and retired customers sign up most (71% to 79% when called on a mobile phone), and mobile calls beat landline calls.
 
-1. **Customer Segmentation** — Which demographics hold the most value?
-2. **Credit Risk** — Which segments default most? Are bigger loans riskier?
-3. **Revenue Analysis** — Where does transaction volume concentrate?
-4. **Loan Portfolio Health** — How much capital is at risk from defaults?
-5. **Marketing Effectiveness** — Which campaigns convert best?
-6. **Risk Dashboard** — Full segment view combining all metrics
+## Why it matters
+Banks keep their data in databases. This shows I can pull clear business answers straight from them with SQL.
 
-## SQL Skills Demonstrated
+## Limitations
+* Practice data based on a public bank marketing dataset, not a real bank's records.
+* Some groups are small, so their rates can swing a lot.
+* No dates are used, so it cannot show trends over time.
 
-- Multi-table JOINs (2, 3, and 4 table joins)
-- Aggregation (COUNT, SUM, AVG, ROUND)
-- CASE WHEN conditional logic
-- Subqueries and correlated subqueries
-- Window functions (RANK, PARTITION BY)
-- HAVING for group filtering
-- NULLIF for safe division
+## How to run
+1. Run `pip install pandas`
+2. Open the notebook and run all cells. The SQL runs inside Python with SQLite.
 
-## Database Schema
-
-| Table | Rows | Key Columns |
-|-------|------|-------------|
-| customers | 11,162 | customer_id, age, job, education |
-| accounts | 11,162 | account_id, balance, account_type |
-| loans | 5,906 | loan_amount, interest_rate, loan_status |
-| transactions | 61,276 | amount, transaction_type, transaction_date |
-| campaign | 11,162 | contact_method, call_duration, subscribed_deposit |
-
-## Key Findings
-
-- Students have highest default rate (15.4%) despite smallest loans
-- Services and blue-collar segments are overleveraged (loan-to-balance >1,300x)
-- Savings accounts show negative net flow withdrawal exceeds deposits
-- Estimated default losses at 60% LGD quantified for IFRS 9 provisioning
-## Power BI Dashboard
-
-Interactive credit risk dashboard built from the same database:
-
-**Page 1 Overview**
-- Total loan book: KES 7.52B across 5,906 loans and 11,162 customers
-- Loan distribution by job category and loan status
-- Default rate by customer segment (students highest at 15.38%)
-
-**Page 2  Trends & Details**
-- Transaction volume trend (declining year over year)
-- Detailed risk profile table by job segment
-
-View the dashboard [c:\Users\siraa\Desktop\bank-sql-analysis\bank_credit_dashboard.pdf](bank_credit_dashboard.pdf)
-
-
-## Tech Stack
-Tools: Power BI Desktop, SQLite, Python
-
-
-## Author
-
-Siraji Ali
+**Tools:** SQL (SQLite), Python
